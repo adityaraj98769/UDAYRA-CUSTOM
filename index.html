@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDAYRA - Premium Perfume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900">
+    <!-- Navigation Header -->
+    <nav class="bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo Section -->
+            <div class="flex items-center gap-2">
+               <img src="udayra-logo.png" alt="UDAYRA Logo" class="w-16 h-16 object-contain">
+                <span class="text-white font-bold text-lg tracking-tight">UDAYRA</span>
+            </div>
+
+            <!-- Desktop Navigation Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <button class="text-gray-300 text-sm hover:text-[#C9A84C] transition-colors tracking-wide">
+                    About
+                </button>
+                <button class="text-gray-300 text-sm hover:text-[#C9A84C] transition-colors tracking-wide">
+                    Occasions
+                </button>
+                <button class="text-gray-300 text-sm hover:text-[#C9A84C] transition-colors tracking-wide">
+                    Process
+                </button>
+                <button class="text-gray-300 text-sm hover:text-[#C9A84C] transition-colors tracking-wide">
+                    Reviews
+                </button>
+                <button class="px-5 py-2 bg-[#C9A84C]/10 text-[#C9A84C] text-sm font-medium rounded-full border border-[#C9A84C]/20 hover:bg-[#C9A84C]/20 transition-all">
+                    Get Quote
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white">
+                <img src="udayra-logo.png" width="24" height="24" alt="Menu Icon">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                
+            </button>
+        </div>
+    </nav>
+
+    <!-- Demo Content (Optional - Remove if not needed) -->
+    <div class="max-w-6xl mx-auto px-6 py-20">
+        <div class="text-center">
+            <h1 class="text-white text-4xl font-bold mb-4">Welcome to UDAYRA</h1>
+            <p class="text-gray-400 text-lg">Premium Perfume Collections</p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.querySelector('.md\\:hidden');
+        const desktopMenu = document.querySelector('.hidden.md\\:flex');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            // You can add mobile menu toggle logic here
+            console.log('Mobile menu clicked');
+        });
+    </script>
+</body>
+</html>
