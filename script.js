@@ -50,7 +50,7 @@
             <a href="#occasions" class="text-white text-2xl hover:text-[#C9A84C] transition-colors tracking-wide">Occasions</a>
             <a href="#process" class="text-white text-2xl hover:text-[#C9A84C] transition-colors tracking-wide">Process</a>
             <a href="#reviews" class="text-white text-2xl hover:text-[#C9A84C] transition-colors tracking-wide">Reviews</a>
-            <a href="#contact" class="px-8 py-3 bg-[#C9A84C]/10 text-[#C9A84C] text-xl font-medium rounded-full border border-[#C9A84C]/20 hover:bg-[#C9A84C]/20 transition-all">Get Quote</a>
+            <a href="#contact" class="px-8 py-3 bg-[#C9A84C]/10 text-[#C9A84C] text-xl font-medium rounded-full border border-[#C9A84C]/20 hover:bg-[#C9A84C]/20 transition-all">Contact Us</a>
         </div>
     `;
     body.appendChild(mobileMenu);
