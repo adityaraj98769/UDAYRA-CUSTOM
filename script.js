@@ -101,3 +101,64 @@
             `;
         });
     });
+    // Form submission handling
+const contactForm = document.getElementById("contact-form");
+
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault(); // stop page reload
+
+  // Browser alert
+  alert("✅ Inquiry sent successfully!");
+
+  showSuccessPopup();
+});
+
+function showSuccessPopup() {
+  const msg = document.getElementById("success-msg");
+
+  msg.classList.remove("hidden");
+
+  setTimeout(() => {
+    msg.classList.add("hidden");
+  }, 3000);
+}
+
+
+
+
+// EmailJS initialization
+
+(function () {
+  emailjs.init("0KpnCeTqIKol1X-rD");
+})();
+
+const form = document.getElementById("contact-form");
+const successMsg = document.getElementById("success-msg");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  emailjs
+    .sendForm(
+      "service_im4c2ls",
+      "template_5uoc5lo", // 👈 yahan apna template ID
+      form,
+      "0KpnCeTqIKol1X-rD" // 👈 yahan apna public key
+    )
+    .then(() => {
+      successMsg.classList.remove("hidden");
+      form.reset();
+
+      setTimeout(() => {
+        successMsg.classList.add("hidden");
+      }, 3000);
+    })
+    .catch((error) => {
+      alert("❌ Inquiry failed");
+      console.error(error);
+    });
+});
+
+
+
+

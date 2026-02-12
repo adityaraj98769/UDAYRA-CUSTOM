@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UDAYRA - Premium Perfume</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body class="bg-gray-900">
     <!-- Navigation Header -->
@@ -486,24 +487,24 @@
                     </div>
                     
                     <div class="lg:col-span-3">
-                        <form class="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm space-y-5">
+                        <form id="contact-form" class="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm space-y-5">
                             <div class="grid sm:grid-cols-2 gap-5">
                                 <div class="space-y-1.5">
                                     <label class="font-medium text-sm text-gray-600">Full Name *</label>
-                                    <input class="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-base shadow-sm transition-colors border-gray-200 focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 focus:outline-none focus:ring-1" required placeholder="Your name">
+                                    <input name="full_name" class="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-base shadow-sm transition-colors border-gray-200 focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 focus:outline-none focus:ring-1" required placeholder="Your name">
                                 </div>
                                 <div class="space-y-1.5">
                                     <label class="font-medium text-sm text-gray-600">Phone / WhatsApp *</label>
-                                    <input class="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-base shadow-sm transition-colors border-gray-200 focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 focus:outline-none focus:ring-1" required placeholder="+91 XXXXX XXXXX">
+                                    <input name="phone" class="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-base shadow-sm transition-colors border-gray-200 focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 focus:outline-none focus:ring-1" required placeholder="+91 XXXXX XXXXX">
                                 </div>
                             </div>
                             <div class="space-y-1.5">
                                 <label class="font-medium text-sm text-gray-600">Email</label>
-                                <input type="email" class="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-base shadow-sm transition-colors border-gray-200 focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 focus:outline-none focus:ring-1" placeholder="your@email.com">
+                                <input name="email" type="email" class="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-base shadow-sm transition-colors border-gray-200 focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 focus:outline-none focus:ring-1" placeholder="your@email.com">
                             </div>
                             <div class="grid sm:grid-cols-2 gap-5">
                                 <div class="space-y-1.5">
-                                    <label class="font-medium text-sm text-gray-600">Occasion *</label>
+                                    <label name="occasion" class="font-medium text-sm text-gray-600">Occasion *</label>
                                     <select class="flex h-9 w-full rounded-md border bg-transparent px-3 py-2 text-sm shadow-sm transition-colors border-gray-200 focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 focus:outline-none focus:ring-1" required>
                                         <option value="">Select occasion</option>
                                         <option value="wedding">Wedding</option>
@@ -518,16 +519,17 @@
                                 </div>
                                 <div class="space-y-1.5">
                                     <label class="font-medium text-sm text-gray-600">Estimated Quantity</label>
-                                    <input class="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-base shadow-sm transition-colors border-gray-200 focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 focus:outline-none focus:ring-1" placeholder="e.g. 500 bottles">
+                                    <input name="quantity" class="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-base shadow-sm transition-colors border-gray-200 focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 focus:outline-none focus:ring-1" placeholder="e.g. 500 bottles">
                                 </div>
                             </div>
                             <div class="space-y-1.5">
                                 <label class="font-medium text-sm text-gray-600">Additional Details</label>
-                                <textarea class="flex w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-sm transition-colors border-gray-200 focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 focus:outline-none focus:ring-1 min-h-[100px]" placeholder="Tell us about your event, theme, colors, or any special requirements..."></textarea>
+                                <textarea name="details" class="flex w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-sm transition-colors border-gray-200 focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 focus:outline-none focus:ring-1 min-h-[100px]" placeholder="Tell us about your event, theme, colors, or any special requirements..."></textarea>
                             </div>
                             <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-[#C9A84C] to-[#E8D48B] text-[#0A1628] font-semibold rounded-xl text-sm tracking-wide transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,168,76,0.2)] hover:scale-[1.01] flex items-center justify-center gap-2">
                                 Send Inquiry
                             </button>
+                            <p id="success-msg" class="hidden text-green-600 text-center mt-3 text-sm">Your inquiry has been sent successfully!✅ We'll get back to you soon.</p>
                         </form>
                     </div>
                 </div>
