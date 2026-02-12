@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UDAYRA - Premium Perfume</title>
+    <title>UDAYRA - Premium Alkaline Water</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
@@ -82,7 +82,7 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <button class="group px-8 py-3.5 bg-gradient-to-r from-[#C9A84C] to-[#E8D48B] text-[#0A1628] font-semibold rounded-full text-sm tracking-wide transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] hover:scale-105">
+                    <button id="openBottleGallery" class="group px-8 py-3.5 bg-gradient-to-r from-[#C9A84C] to-[#E8D48B] text-[#0A1628] font-semibold rounded-full text-sm tracking-wide transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] hover:scale-105">
                         Customize Your Bottle
                     </button>
                     <button class="px-8 py-3.5 border border-white/20 text-white rounded-full text-sm tracking-wide transition-all duration-300 hover:bg-white/5 hover:border-white/40">
@@ -504,8 +504,8 @@
                             </div>
                             <div class="grid sm:grid-cols-2 gap-5">
                                 <div class="space-y-1.5">
-                                    <label name="occasion" class="font-medium text-sm text-gray-600">Occasion *</label>
-                                    <select class="flex h-9 w-full rounded-md border bg-transparent px-3 py-2 text-sm shadow-sm transition-colors border-gray-200 focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 focus:outline-none focus:ring-1" required>
+                                    <label class="font-medium text-sm text-gray-600">Occasion *</label>
+                                    <select name="occasion" class="flex h-9 w-full rounded-md border bg-transparent px-3 py-2 text-sm shadow-sm transition-colors border-gray-200 focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 focus:outline-none focus:ring-1" required>
                                         <option value="">Select occasion</option>
                                         <option value="wedding">Wedding</option>
                                         <option value="birthday">Birthday</option>
@@ -581,7 +581,53 @@
         }
     </script> -->
 
-<script src="script.js"></script>
 
+
+
+<!-- Bottle Gallery Modal -->
+<div id="bottleModal" class="fixed inset-0 bg-black/70 hidden z-50 flex items-center justify-center">
+  
+  <div class="relative bg-white max-w-4xl w-full mx-4 rounded-xl p-5">
+
+    <!-- Close Button -->
+    <button id="closeModal"
+      class="absolute top-3 left-3 text-2xl font-bold text-gray-600 hover:text-black">
+      ✕
+    </button>
+
+    <!-- Image Viewer -->
+    <div class="relative flex items-center justify-center mb-4">
+      <button id="prevBtn"
+        class="absolute left-0 text-3xl px-3 text-gray-600 hover:text-black">
+        ‹
+      </button>
+
+      <img id="mainImage"
+        src="images/bottle1.jpg"
+        class="max-h-[300px] rounded-lg object-contain" />
+
+      <button id="nextBtn"
+        class="absolute right-0 text-3xl px-3 text-gray-600 hover:text-black">
+        ›
+      </button>
+    </div>
+
+    <!-- Thumbnail Grid -->
+    <div class="grid grid-cols-3 sm:grid-cols-5 gap-3">
+      <img src="wedding-bottle.png" class="thumb cursor-pointer rounded border">
+      <img src="Birthday-event.png" class="thumb cursor-pointer rounded border">
+      <img src="corporate-event.png" class="thumb cursor-pointer rounded border">
+      <img src="Hotel-event.png" class="thumb cursor-pointer rounded border">
+      <img src="restaurant-event.png" class="thumb cursor-pointer rounded border">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<script src="script.js"></script>
 </body>
 </html>

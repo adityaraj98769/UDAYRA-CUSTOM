@@ -159,6 +159,54 @@ form.addEventListener("submit", function (e) {
     });
 });
 
+// Modal gallery logic
+const modal = document.getElementById("bottleModal");
+const openBtn = document.getElementById("openBottleGallery");
+const closeBtn = document.getElementById("closeModal");
+
+const mainImage = document.getElementById("mainImage");
+const thumbnails = document.querySelectorAll(".thumb");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let images = [];
+let currentIndex = 0;
+
+// collect images
+thumbnails.forEach((img, index) => {
+  images.push(img.src);
+
+  img.addEventListener("click", () => {
+    currentIndex = index;
+    mainImage.src = images[currentIndex];
+  });
+});
+
+// open modal
+openBtn.addEventListener("click", () => {
+  modal.classList.remove("hidden");
+  document.body.style.overflow = "hidden";
+});
+
+// close modal
+closeBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  document.body.style.overflow = "auto";
+});
+
+// left arrow
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  mainImage.src = images[currentIndex];
+});
+
+// right arrow
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  mainImage.src = images[currentIndex];
+});
+
+
 
 
 
